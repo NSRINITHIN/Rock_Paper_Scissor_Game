@@ -1,0 +1,40 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0; padding: 0;
+    transition: background 0.8s ease;
+}
+.game-container {
+    text-align: center;
+    margin: 5% auto;
+    padding: 25px 20px;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    position: relative;
+    transition: all 0.5s ease;
+}
+.btn-game {
+    width: 120px; margin: 10px; font-weight: bold;
+    font-size: 18px; text-transform: capitalize;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.btn-game:hover { transform: translateY(-3px); box-shadow: 3px 6px 12px rgba(0,0,0,0.25);}
+.btn-reset { margin-top: 15px; }
+.result, .moves, .score, .total-games, .history, .high-score { margin-top: 12px; font-size: 18px; }
+.result { font-size: 20px; font-weight: bold; transition: color 0.5s ease; }
+.animate-score { animation: bounce 0.4s ease; }
+@keyframes bounce {0%{transform:scale(1);}50%{transform:scale(1.3);}100%{transform:scale(1);}}
+.developer-credit {
+    position: absolute; bottom: 5px; width: 100%; font-size: 14px;
+    font-weight: bold; color: #333; animation: fadeInOut 6s infinite;
+}
+@keyframes fadeInOut {0%,20%,100%{opacity:0;}40%,80%{opacity:1;}}
+.theme-light { background: linear-gradient(to bottom, #fff9c4,#ffecb3); color: #333; }
+.theme-dark { background: linear-gradient(to bottom, #444,#222); color: #fff; }
+.theme-fun { background: linear-gradient(to bottom, #ff9a9e,#fad0c4); color: #222; }
+.theme-animated { transition: background 1s ease;}
+@media (max-width:480px){
+    .btn-game{width:90px; font-size:16px; margin:5px;}
+    .game-container{margin:8% 10px; padding:20px 10px;}
+}
