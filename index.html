@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rock Paper Scissors - Swipe Fun</title>
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script src="main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - Swipe Fun</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="theme-light theme-animated">
+
+    <!-- Developer Header -->
+    <!-- Top Developer Header -->
+<!-- Developer Header -->
+<div class="developer-credit text-center py-4 shadow-sm bg-light sticky-top">
+    <h1 class="highlight-name mb-1">🚀 N. Srinithin 🚀</h1>
+    <p class="developer-tagline text-muted mb-0 fs-5">Full-Stack Developer | Machine Learning Enthusiast</p>
+</div>
+
+<!-- Game Container -->
 <div class="game-container theme-light theme-animated" id="game">
-<h2 class="mb-3">Rock Paper Scissors ✊✋✌</h2>
-
-<div class="d-flex justify-content-center flex-wrap">
-<button class="btn btn-primary btn-game" onclick="playGame('rock')">Rock ✊</button>
-<button class="btn btn-success btn-game" onclick="playGame('paper')">Paper ✋</button>
-<button class="btn btn-warning btn-game" onclick="playGame('scissors')">Scissors ✌</button>
-</div>
-
-<div class="mt-3">
-<label for="difficulty" class="form-label">Difficulty:</label>
-<select id="difficulty" class="form-select w-auto d-inline">
-<option value="easy">Easy</option>
-<option value="medium" selected>Medium</option>
-<option value="hard">Hard</option>
-</select>
-</div>
-
-<p class="result"></p>
-<p class="moves"></p>
-<p class="score"></p>
-<p class="high-score"></p>
-<p class="total-games"></p>
-<div class="history"><strong>Last 5 Moves:</strong> <span id="history-log">-</span></div>
-
-<div class="mt-2">
-<label for="theme" class="form-label">Theme:</label>
-<select id="theme" class="form-select w-auto d-inline" onchange="switchTheme()">
-<option value="theme-light">Light</option>
-<option value="theme-dark">Dark</option>
-<option value="theme-fun">Fun</option>
-</select>
-</div>
-
-<button class="btn btn-dark btn-reset mt-3" onclick="resetGame()">Reset Score 🔄</button>
-
-<div class="developer-credit">Developed by N. Srinithin</div>
+    <h2 class="mb-3">Rock Paper Scissors ✊✋✌</h2>
+    <div class="d-flex justify-content-center flex-wrap">
+        <button class="btn btn-primary btn-game">Rock ✊</button>
+        <button class="btn btn-success btn-game">Paper ✋</button>
+        <button class="btn btn-warning btn-game">Scissors ✌</button>
+    </div>
+    <div class="mt-3">
+        <label for="difficulty" class="form-label">Difficulty:</label>
+        <select id="difficulty" class="form-select w-auto d-inline">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </div>
+    <p class="result"></p>
+    <p class="moves"></p>
+    <p class="score"></p>
+    <p class="high-score"></p>
+    <p class="total-games"></p>
+    <div class="history"><strong>Last 5 Moves:</strong> <span id="history-log">-</span></div>
+    <div class="mt-2">
+        <label for="theme" class="form-label">Theme:</label>
+        <select id="theme" class="form-select w-auto d-inline"></select>
+    </div>
+    <button class="btn btn-dark btn-reset mt-3">Reset Score 🔄</button>
 </div>
 
 <!-- Audio -->
@@ -59,7 +55,9 @@
 <!-- Confetti -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main JS -->
+    <script src="main.js"></script>
 </body>
 </html>
