@@ -82,8 +82,8 @@ body {
 }
 
 /* Individual button colors (optional) */
-.btn-game:nth-child(1) { background-color: #1E90FF; } /* Rock */
-.btn-game:nth-child(2) { background-color: #28A745; } /* Paper */
+.btn-game:nth-child(1) { background-color: #1E90FF; color: #222;} /* Rock */
+.btn-game:nth-child(2) { background-color: #28A745; color: #222;} /* Paper */
 .btn-game:nth-child(3) { background-color: #FFC107; color:#222; } /* Scissors */
 
 
@@ -99,58 +99,118 @@ body {
 .animate-score { animation: bounce 0.4s ease; }
 @keyframes bounce { 0%{transform:scale(1);}50%{transform:scale(1.3);}100%{transform:scale(1);} }
 
-/* Developer credit */
+/* Developer name - glowing gradient with sparkles */
 .highlight-name {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #ff6b6b;
-    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 2.6rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1, #ff9ff3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hueShift 6s infinite linear, bounce 3s ease-in-out infinite;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 15px rgba(255,255,255,0.4), 0 0 25px rgba(255,255,255,0.1);
     display: inline-block;
-    animation: bounce 3s ease-in-out infinite;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
+
 .highlight-name:hover {
-    transform: scale(1.1);
-    color: #007bff; 
+    transform: scale(1.15) rotate(-2deg);
+    text-shadow: 0 0 35px rgba(255, 255, 0, 0.9), 0 0 50px rgba(255, 200, 0, 0.7);
 }
+
+/* Sparkle behind the name */
+.highlight-name::before {
+    content: "✨";
+    position: absolute;
+    left: -15px;
+    top: -10px;
+    font-size: 1.2rem;
+    animation: sparkle 2s infinite alternate;
+}
+
+.highlight-name::after {
+    content: "⚡";
+    position: absolute;
+    right: -15px;
+    top: 0;
+    font-size: 1.3rem;
+    animation: thunderGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+    50% { transform: scale(1.4) rotate(20deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+}
+
+/* Glow and gradient animation */
+@keyframes hueShift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
 @keyframes bounce {
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-5px);}
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
 }
+
+/* Tagline shimmer */
 .developer-tagline {
     font-size: 1.1rem;
-    color: #555;
-    transition: color 0.3s ease;
+    color: #444;
+    transition: color 0.3s ease, text-shadow 0.5s ease;
 }
-.developer-tagline:hover { color: #007bff; }
 
-/* Sticky header styling */
+.developer-tagline:hover {
+    color: #007bff;
+    text-shadow: 0 0 15px rgba(0,123,255,0.8);
+}
+
+/* Sticky header with glowing accent */
 .developer-credit {
-    background-color: #f8f9fa;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 1rem 0;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 1.5rem 0;
     position: sticky;
     top: 0;
     z-index: 1030;
+    text-align: center;
+    border-bottom: 4px solid #ff9ff3;
 }
+
 
 /* ---- Add at the very bottom of style.css ---- */
 
 /* Theme Light - Colorful soft gradient */
 /* Light theme - soft animated gradient */
+/* Light theme - Soft aurora gradient with pastel hues */
+/* Light theme - Dreamy aurora pastel gradient */
 .theme-light {
-    background: linear-gradient(45deg, #fff9c4, #ffe57f, #fff176, #ffd54f);
+    background: linear-gradient(
+        60deg,
+        #ffd6e8,   /* Soft pink */
+        #fff4b2,   /* Light yellow */
+        #b2f7ef,   /* Minty cyan */
+        #c3f0f2,   /* Soft sky blue */
+        #e7d4ff    /* Lavender */
+    );
     background-size: 400% 400%;
-    color: #333;
-    animation: lightGradient 8s ease infinite;
+    color: #2c2c2c;
+    animation: dreamyGradient 12s ease infinite;
 }
 
-@keyframes lightGradient {
+/* Smooth, flowing gradient animation */
+@keyframes dreamyGradient {
     0% { background-position: 0% 50%; }
     25% { background-position: 50% 100%; }
     50% { background-position: 100% 50%; }
     75% { background-position: 50% 0%; }
     100% { background-position: 0% 50%; }
 }
+
 
 /* Dark theme - deep animated gradient */
 .theme-dark {
